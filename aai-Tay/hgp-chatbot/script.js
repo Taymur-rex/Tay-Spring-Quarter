@@ -24,7 +24,8 @@ const rules = [
   { match: ["program", "classes"], reply: "We teach leadership + tech skills. Ask: 'What do we learn in BI?'" },
   { match: ["office hours"], reply: "Office Hours are Mondays, Tuesdays, Thursdays, and Fridays." },
   // Websites rule includes an HTML link; bot messages render as HTML so this will be clickable
-  { match: ["website", "websites"], reply: 'Here is some website help with coding: <a href="https://www.w3schools.com/" target="_blank" rel="noopener">Codecademy</a>' }
+  { match: ["website", "websites"], reply: 'Here is some website help with coding: <a href="https://www.w3schools.com/" target="_blank" rel="noopener">Codecademy</a>' },
+  { match: ["Landon", "name"], reply: "You mean wannabe Ja Morant acting like a thug trying to be the next 310baby." },
 ];
 
 
