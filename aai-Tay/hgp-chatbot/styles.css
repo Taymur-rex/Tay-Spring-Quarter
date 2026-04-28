@@ -1,10 +1,56 @@
-body { font-family: system-ui, Arial; background:#f4f4f4; margin:0; }
-.app { max-width: 720px; margin: 24px auto; background:white; padding:16px; border-radius:12px; }
-.chat { height: 320px; overflow:auto; border:1px solid #ddd; padding:12px; border-radius:12px; background:#fafafa; }
+body { font-family: system-ui, Arial; background:#000000; margin:0; }
+.app { max-width: 720px; margin: 24px auto; background:rgb(255, 7, 234); padding:16px; border-radius:12px; }
+.chat { height: 320px; overflow:auto; border:1px solid #8c76d3; padding:12px; border-radius:12px; background:#fafafa; }
 .msg { padding:10px 12px; margin:8px 0; border-radius:12px; max-width: 80%; }
 .user { background:#d8ecff; margin-left:auto; }
-.bot { background:#eaeaea; margin-right:auto; }
+.bot { background:hsl(284, 81%, 75%); margin-right:auto; }
 .form { display:flex; gap:8px; margin-top:12px; }
 input { flex:1; padding:10px; border-radius:10px; border:1px solid #ccc; }
 button { padding:10px 14px; border-radius:10px; border:0; background:#111; color:white; }
+
+.thunder-thinking {
+  background: transparent;
+  box-shadow: none;
+}
+
+.thunder-animation {
+  width: 32px;
+  height: 32px;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.thunder-animation::before {
+  content: '';
+  display: block;
+  width: 6px;
+  height: 32px;
+  background: linear-gradient(180deg, #e100ff 0%, #a259f7 60%, #fff 100%);
+  border-radius: 3px;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%) skew(-15deg);
+  opacity: 0.85;
+  filter: blur(0.5px);
+  animation: thunder-flash 0.5s linear infinite alternate;
+}
+
+@keyframes thunder-flash {
+  0% {
+    opacity: 0.2;
+    box-shadow: 0 0 0px 0px #e100ff;
+  }
+  40% {
+    opacity: 1;
+    box-shadow: 0 0 16px 4px #e100ff, 0 0 32px 8px #a259f7;
+  }
+  100% {
+    opacity: 0.2;
+    box-shadow: 0 0 0px 0px #e100ff;
+  }
+}
 
