@@ -1,20 +1,20 @@
 using UnityEngine;
-
 public class PlayerController : MonoBehaviour
 {
-    // The speed at which the player moves
-    public float movespeed = 5f;
+    public float movementSpeed = 5f; // Variable to controll how fast the player moves
+    public Rigidbody rb; // Empty reference to thr CharacterController component on the player
 
-    public Rigidbody rb;
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+        rb = GetComponent<Rigidbody>(); // Get the CharacterController component attactched to the player
+    }
+    void FixedUpdate()
+    {
+        float horizontalInput = Input.GetAxis("Horizontal"); // Stores the Horizontal(Left/Right) input of the player
+        float verticalInput = Input.GetAxis("Vertical"); // Stores the Vertical (Up/Down) input of the player
 
-    private void Start()
-    {
-        rb = GetComponent<Rigidbody>();
-    }
-
-    private void FixedUpdate(){
-        // Collect Player Input
-        float xInput = Input.GetAxis("Horizontal");
-        float zInput = Input.GetAxis("Vertical ");
-    }
+        Vector3 movement = new Vector3(horizontalInput, 0f, verticalInput); // Calculate the direction the player sgould move based on the input
+        rb.AddForce(movement*movementSpeed*Time.deltaTime, ForceMode.Impulse);
+    }
 }
